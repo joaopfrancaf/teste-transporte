@@ -14,11 +14,11 @@ $resultado = [];
 $chaves = array_keys($entregas);
 $total = count($chaves);
 
-for ($i = 1; $i < (1 << $total); $i++) {
+for ($i = 1; $i < (1 << $total); $i++) { //gera todas as combinações possíveis.
     $comb = [];
     $distancia = 0;
 
-    for ($j = 0; $j < $total; $j++) {
+    for ($j = 0; $j < $total; $j++) { // monta a lista de entregas + soma a distância.
         if ($i & (1 << $j)) {
             $entrega = $chaves[$j];
             $distancia += $entregas[$entrega];
@@ -26,7 +26,7 @@ for ($i = 1; $i < (1 << $total); $i++) {
         }
     }
 
-    if ($distancia <= $autonomia) {
+    if ($distancia <= $autonomia) { //filtra se esta dentro da economia
         $resultado[] = [
             'entregas' => implode(", ", $comb),
             'distancia' => $distancia
