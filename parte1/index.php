@@ -43,5 +43,12 @@ while (!empty($entregas)) {
     arsort($entregas);
 }
 
-var_dump($frota);
-echo("numero de caminhoes: ") . sizeof($frota) . "<br>";
+// exibir
+foreach ($frota as $index => $grupo) {
+    echo "caminhao $index:" . "<br>";
+    foreach ($grupo as $chave => $valor) {
+        echo "  $chave => $valor" . "<br>";
+    }
+    echo "<br>";
+}
+echo("numero de caminhoes: ") . sizeof($frota);
