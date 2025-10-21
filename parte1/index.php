@@ -36,7 +36,7 @@ while (!empty($entregas)) {
 
     $frota[] = $caminhao;
 
-    foreach ($caminhao as $entrega => $_) { // remove as entregas usadas
+    foreach ($caminhao as $entrega => $_) { // remove as entregas feitas
         unset($entregas[$entrega]);
     }
 
